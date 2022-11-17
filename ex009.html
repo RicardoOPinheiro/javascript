@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMIGRAÇÃO</title>
+    <style>
+        body {
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>De que país você é?</h1>
+    País: <input type="text" name="pais" id="pais">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="txt">
+
+    </div>
+    <script>
+        function verificar(){
+            var txt = window.document.getElementById('pais')
+            var res = window.document.getElementById('txt')
+            var pais = String(txt.value)
+            res.innerHTML = `<p>Você nasceu em ${pais}!</p>`
+            if (pais == "Brasil"){
+                res.innerHTML += '<p>Você é brasileiro!</p>'
+                res.innerHTML += '<p>Bem vindo de volta!</p>'
+            }else{
+                res.innerHTML += '<p>Você é estrangeiro!</p>'
+                res.innerHTML += '<p>Seja bem vindo!</p>'
+            }
+        }
+        
+    </script>
+</body>
+</html>
